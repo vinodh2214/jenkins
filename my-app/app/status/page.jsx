@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const page = () => {
 
-    const players = ["John", "Jack", "Ron", "Harry", "Chris"];
+    const players = ["Pavan", "Bhanu", "Prabhu", "Satya", "Vinodh"];
 const ranks = [1, 2, 3, 4, 5];
 
 const pointsMap = {
