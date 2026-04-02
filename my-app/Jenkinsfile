@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    // 👇 This enables GitHub webhook trigger
+    triggers {
+        githubPush()
+    }
+
+    stages {
+
+        stage('Triggered ✅') {
+            steps {
+                echo "🚀 Pipeline triggered from GitHub push!"
+            }
+        }
+
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main', url: '<YOUR_GITHUB_REPO_URL>'
+            }
+        }
+
+        stage('Verify') {
+            steps {
+                sh '''
+                echo "Build triggered at:"
+                date
+                ls -la
+                '''
+            }
+        }
+    }
+}
